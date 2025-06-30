@@ -35,10 +35,12 @@ pub fn main() void {
     // at compile time.
     //
     // Please fix this to loop once per "instruction":
-    ??? (i < instructions.len) : (???) {
+    inline while (i < instructions.len) : (i += 3) {
 
         // This gets the digit from the "instruction". Can you
         // figure out why we subtract '0' from it?
+        //
+        // A: Because you need to convert the ascii value to a 0-9 int val.
         const digit = instructions[i + 1] - '0';
 
         // This 'switch' statement contains the actual work done
